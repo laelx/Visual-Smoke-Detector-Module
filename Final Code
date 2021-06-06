@@ -1,0 +1,22 @@
+// TO BE RUN ON ARDUNIO SOFTWARE
+void setup()
+{
+ pinMode(7, OUTPUT);
+}
+
+void loop()
+{
+ if (analogRead(A0) > 50) //IF SMOKE LEVEL IS ABOVE THE THRESHOLD IT WILL TRIGGER FLASHING LIGHT AND BUZZER TONE 
+ {
+  digitalWrite(7, HIGH);   
+  delay(500);                       
+  digitalWrite(7, LOW);    
+  delay(500); 
+
+  tone(6, 500, 250);
+ }
+ else //IF SMOKE LEVEL IS BELOW THE THRESHOLD IT WON'T DO ANYTHING 
+ {
+  digitalWrite(7, LOW);   
+ }
+}
